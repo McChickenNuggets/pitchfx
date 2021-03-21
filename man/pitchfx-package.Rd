@@ -11,6 +11,14 @@ Since baseballr failed, I decided to write a package to scrape PITCHf/x dataset 
 \details{
 PITCHf/x is a system using three permanently mounted cameras in the stadium to track the speed and location of a pitched baseball from the pitcher's mound to home plate with an accuracy of better than one mile per hour and one inch. With PITCHf/x, statistics such as the pitcher with the fastest fastball, or the pitcher with the sharpest-breaking curve, etc., can be analyzed. This package provides a convenient way to obtain PITCHf/x dataset.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/McChickenNuggets/pitchfx}
+  \item Report bugs at \url{https://github.com/McChickenNuggets/pitchfx/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Xuanbin Chen \email{jaunechen@qq.com}
 

@@ -11,7 +11,8 @@
 get_game_ids<-function(date_start,date_end = 0){
   if(date_end == 0){
     html<-str_glue("https://statsapi.mlb.com/api/v1/schedule/games/?sportId=1&date={dateid}",dateid = date_start)
-    info<-fromJSON(html)
+    r<-RETRY("GET",html,times = 10)
+    info<-fromJSON(content(r, as = "text", encoding = "UTF-8"))
     if(info$totalGames == 0){
       stop("No Game this day")
     }else{
@@ -25,7 +26,8 @@ get_game_ids<-function(date_start,date_end = 0){
     game_ids<-c()
     while(theDate<=end){
       html<-str_glue("https://statsapi.mlb.com/api/v1/schedule/games/?sportId=1&date={dateid}",dateid = theDate)
-      info<-fromJSON(html)
+      r<-RETRY("GET",html, times = 10)
+      info<-fromJSON(content(r, as = "text", encoding = "UTF-8"))
       if(info$totalGames == 0){
         stop("No Game this day")
       }else{

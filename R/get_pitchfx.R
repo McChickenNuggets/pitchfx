@@ -1,7 +1,7 @@
 #' @import jsonlite
 #' @import plyr
 #' @import stringr
-#' @import curl
+#' @import httr
 #' @details
 #' PITCHf/x is a system using three permanently mounted cameras in the stadium to track the speed and location of a pitched baseball from the pitcher's mound to home plate with an accuracy of better than one mile per hour and one inch. With PITCHf/x, statistics such as the pitcher with the fastest fastball, or the pitcher with the sharpest-breaking curve, etc., can be analyzed. This package provides a convenient way to obtain PITCHf/x dataset.
 "_PACKAGE"
@@ -28,7 +28,8 @@ get_pitchfx<-function(date_start = 0, date_end = 0, game_id = NULL){
   game_urls<-get_game_urls(game_ids)
   pitchfx_df<-c()
   for(i in 1:length(game_urls)){
-    json_data <- fromJSON(game_urls[i])
+    r<-RETRY("GET",game_urls[i],times = 10)
+    json_data <- fromJSON(content(r, as = "text", encoding = "UTF-8"))
     breaksList = list()
     events <- json_data$liveData$plays$allPlays$playEvents
     if (is.null(events)) return(NULL)

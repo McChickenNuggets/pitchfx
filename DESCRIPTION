@@ -1,16 +1,22 @@
 Package: pitchfx
-Title: What the Package Does (One Line, Title Case)
+Title: Scrape PITCHf/x dataset
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Xuanbin",
+           family = "Chen",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+           email = "jaunechen@qq.com")
+Description: Since baseballr failed, I decided to write a package to scrape PITCHf/x dataset myself. This package provides a main function get_pitchfx to obtain the PITCHf/x data. It makes use of mlbstat api to obtain the fundamental dataset and do some manual cleaning to fetch the PITCHf/x dataset. You can either pass specific game_id or date to use this function.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Imports: 
+    jsonlite,
+    plyr,
+    stringr,
+    curl
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

@@ -45,4 +45,15 @@ get_game_ids(date_start = "2020-7-23", date_end = "2020-7-24")
 [1] 630851 631377 631242 631589 630966 631121 631563 631641 631664 630941 631514 630989 631091 631438 631378 631182
 ```
 
-## Contact via: jaunechen@qq.com
+## Important Notes
+
+I have to mention, it will be really slow if you want to scrape whole season. It will be better to use to obtain a short period of PITCHf/x data by calling `get_pitchfx` directly unless you have supreme computation on your laptop, or you will spend nearly a whole day to scrape a season even as short as season 2020.
+
+I will probably update two feautures in the future if I'm still interested in PITCHf/x in the future.
+- Multithreading (Boost the speed)
+- Floating Proxy IP pools (Handle blocked-ip by excessive requesting)
+
+You have an alternative to use `google cloud platform` and to rent a GPU if you want to get the data quickly.
+
+## Contact 
+Contact me via jaunechen@qq.com if you have troubles using this rpackage, or pulling requests on issues tabs directly. 

@@ -49,7 +49,7 @@ get_game_ids(date_start = "2020-7-23", date_end = "2020-7-24")
 
 I have to mention, it will be really slow if you want to scrape whole season. It will be better to use to obtain a short period of PITCHf/x data by calling `get_pitchfx` directly unless you have supreme computation on your laptop, or you will spend nearly a whole day to scrape a season even as short as season 2020.
 
-I will probably update two feautures in the future if I'm still interested in PITCHf/x in the future.
+I will probably update two feautures in the future if I'm still interested in PITCHf/x.
 - Multithreading (Boost the speed)
 - Floating Proxy IP pools (Handle blocked-ip by excessive requesting)
 

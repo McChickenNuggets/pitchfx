@@ -2,7 +2,7 @@
 
 export(get_game_ids)
 export(get_pitchfx)
-import(curl)
+import(httr)
 import(jsonlite)
 import(plyr)
 import(stringr)
